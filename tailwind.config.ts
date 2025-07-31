@@ -61,7 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				game: {
+					bg: 'hsl(var(--game-bg))',
+					card: {
+						bg: 'hsl(var(--card-bg))',
+						front: 'hsl(var(--card-front))',
+						shadow: 'hsl(var(--card-shadow))'
+					}
+				},
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-bg': 'var(--gradient-bg)',
+				'gradient-card': 'var(--gradient-card)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +100,44 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'flip': {
+					'0%': { transform: 'perspective(1000px) rotateY(0deg)' },
+					'50%': { transform: 'perspective(1000px) rotateY(-90deg)' },
+					'100%': { transform: 'perspective(1000px) rotateY(0deg)' }
+				},
+				'flip-in': {
+					'0%': { transform: 'perspective(1000px) rotateY(-90deg)' },
+					'100%': { transform: 'perspective(1000px) rotateY(0deg)' }
+				},
+				'flip-out': {
+					'0%': { transform: 'perspective(1000px) rotateY(0deg)' },
+					'100%': { transform: 'perspective(1000px) rotateY(90deg)' }
+				},
+				'match-bounce': {
+					'0%, 20%, 50%, 80%, 100%': { transform: 'scale(1)' },
+					'40%': { transform: 'scale(1.1)' },
+					'60%': { transform: 'scale(1.05)' }
+				},
+				'pulse-success': {
+					'0%': { boxShadow: '0 0 0 0 hsl(var(--success) / 0.7)' },
+					'70%': { boxShadow: '0 0 0 10px hsl(var(--success) / 0)' },
+					'100%': { boxShadow: '0 0 0 0 hsl(var(--success) / 0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'flip': 'flip 0.6s ease-in-out',
+				'flip-in': 'flip-in 0.3s ease-out',
+				'flip-out': 'flip-out 0.3s ease-in',
+				'match-bounce': 'match-bounce 0.6s ease-in-out',
+				'pulse-success': 'pulse-success 1s ease-out',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
